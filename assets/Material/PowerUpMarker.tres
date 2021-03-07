@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://assets/shaders/Marker.shader" type="Shader" id=1]
+[ext_resource path="res://assets/2D/Marker/marker.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/distance_fade_min = 2.0
+shader_param/distance_fade_max = 5.0
+shader_param/roughness = 1.0
+shader_param/point_size = 0.0
+shader_param/number_of_frame = Vector2( 6, 1 )
+shader_param/current_frame = Vector2( 0, 0 )
+shader_param/bounce = true
+shader_param/rotate = false
+shader_param/visible = true
+shader_param/texture_albedo = ExtResource( 2 )

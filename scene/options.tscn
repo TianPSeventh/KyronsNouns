@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/global/data.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/dynamic/large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/themes/new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/styleBox/Social.tres" type="StyleBox" id=4]
+[ext_resource path="res://prefabs/menus/Toggle.tscn" type="PackedScene" id=5]
+
+[node name="options" type="PopupPanel"]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -512.0
+margin_right = -55.0
+margin_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 3 )
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MC" type="MarginContainer" parent="."]
+pause_mode = 2
+margin_right = 245.0
+margin_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 3 )
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 235.0
+margin_bottom = 354.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="MC/VB"]
+margin_right = 225.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 2 )
+text = "Options"
+align = 1
+
+[node name="Resume" type="Button" parent="MC/VB"]
+margin_top = 59.0
+margin_right = 225.0
+margin_bottom = 94.0
+text = "Resume"
+
+[node name="Orientation" type="HBoxContainer" parent="MC/VB"]
+margin_top = 109.0
+margin_right = 225.0
+margin_bottom = 144.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="MC/VB/Orientation"]
+margin_top = 2.0
+margin_right = 176.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Landscape Mode"
+
+[node name="Toggle" parent="MC/VB/Orientation" instance=ExtResource( 5 )]
+margin_left = 186.0
+margin_right = 225.0
+margin_bottom = 35.0
+
+[node name="Button" type="Button" parent="MC/VB"]
+margin_top = 159.0
+margin_right = 225.0
+margin_bottom = 194.0
+
+[node name="Button2" type="Button" parent="MC/VB"]
+margin_top = 209.0
+margin_right = 225.0
+margin_bottom = 244.0
+
+[node name="Main" type="Button" parent="MC/VB"]
+margin_top = 259.0
+margin_right = 225.0
+margin_bottom = 294.0
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MC/VB"]
+margin_top = 309.0
+margin_right = 225.0
+margin_bottom = 344.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGME" type="AudioStreamPlayer" parent="."]
+autoplay = true
+[connection signal="visibility_changed" from="." to="." method="_on_options_visibility_changed"]
+[connection signal="pressed" from="MC/VB/Resume" to="." method="openOptions" binds= [ false ]]
+[connection signal="toggled" from="MC/VB/Orientation/Toggle" to="." method="_on_Toggle_toggled"]
+[connection signal="pressed" from="MC/VB/Main" to="." method="openOptions" binds= [ false ]]
+[connection signal="pressed" from="MC/VB/Main" to="." method="_on_Main_pressed"]
+[connection signal="pressed" from="MC/VB/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MC/VB/Quit" to="." method="openOptions" binds= [ false ]]

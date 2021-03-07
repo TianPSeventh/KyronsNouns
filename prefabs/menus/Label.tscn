@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/font/dynamic/large.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/styleBox/header.tres" type="StyleBox" id=2]
+
+[node name="Label" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

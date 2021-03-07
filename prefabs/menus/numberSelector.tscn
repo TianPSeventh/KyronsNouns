@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/local/numberSelector.gd" type="Script" id=1]
+
+[node name="numberSelector" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="."]
+margin_right = 20.0
+margin_bottom = 40.0
+text = "+"
+
+[node name="Display" type="SpinBox" parent="."]
+margin_left = 30.0
+margin_right = 104.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="Sub" type="Button" parent="."]
+margin_left = 114.0
+margin_right = 131.0
+margin_bottom = 40.0
+text = "-"

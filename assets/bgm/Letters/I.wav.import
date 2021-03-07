@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/I.wav-45a2f65762b1b79519bdef7a5fb83dd6.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Letters/I.wav"
+dest_files=[ "res://.import/I.wav-45a2f65762b1b79519bdef7a5fb83dd6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

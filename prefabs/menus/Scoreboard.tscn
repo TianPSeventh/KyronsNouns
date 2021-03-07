@@ -1,0 +1,160 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 3.0
+content_margin_bottom = 2.0
+bg_color = Color( 0.690196, 0.690196, 0.690196, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0.262745 )
+shadow_size = 1
+shadow_offset = Vector2( 5, 5 )
+
+[node name="Scoreboard" type="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 800, 400 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VGrid" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VGrid"]
+margin_right = 984.0
+margin_bottom = 14.0
+text = "SCOREBOARD"
+align = 1
+
+[node name="HGrid" type="HBoxContainer" parent="VGrid"]
+margin_top = 34.0
+margin_right = 984.0
+margin_bottom = 520.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Buttons" type="VBoxContainer" parent="VGrid/HGrid"]
+margin_right = 83.0
+margin_bottom = 486.0
+custom_constants/separation = 15
+
+[node name="Difficulty" type="OptionButton" parent="VGrid/HGrid/Buttons"]
+margin_right = 83.0
+margin_bottom = 20.0
+text = "EASY"
+align = 1
+items = [ "EASY", null, false, 0, null, "NORMAL", null, false, 1, null, "HARD", null, false, 2, null, "INSANE", null, false, 3, null ]
+selected = 0
+
+[node name="ToggleScore" type="Button" parent="VGrid/HGrid/Buttons"]
+margin_top = 35.0
+margin_right = 83.0
+margin_bottom = 55.0
+size_flags_vertical = 0
+toggle_mode = true
+text = "Score"
+
+[node name="ToggleTime" type="Button" parent="VGrid/HGrid/Buttons"]
+margin_top = 70.0
+margin_right = 83.0
+margin_bottom = 90.0
+size_flags_vertical = 0
+toggle_mode = true
+text = "Time"
+
+[node name="ToggleName" type="Button" parent="VGrid/HGrid/Buttons"]
+margin_top = 105.0
+margin_right = 83.0
+margin_bottom = 125.0
+size_flags_vertical = 0
+toggle_mode = true
+text = "Name"
+
+[node name="HGrid" type="HBoxContainer" parent="VGrid/HGrid/Buttons"]
+margin_top = 140.0
+margin_right = 83.0
+margin_bottom = 160.0
+size_flags_vertical = 0
+
+[node name="ToggleAsc" type="Button" parent="VGrid/HGrid/Buttons/HGrid"]
+margin_right = 35.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 10
+toggle_mode = true
+text = "Asc"
+
+[node name="ToggleDesc" type="Button" parent="VGrid/HGrid/Buttons/HGrid"]
+margin_left = 39.0
+margin_right = 83.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Desc"
+
+[node name="Scroll" type="ScrollContainer" parent="VGrid/HGrid"]
+margin_left = 93.0
+margin_right = 984.0
+margin_bottom = 486.0
+rect_min_size = Vector2( 500, 300 )
+size_flags_horizontal = 3
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scoreText" type="HBoxContainer" parent="VGrid/HGrid/Scroll"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 887.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Time" type="Label" parent="VGrid/HGrid/Scroll/scoreText"]
+margin_right = 281.0
+margin_bottom = 481.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+
+[node name="Score" type="Label" parent="VGrid/HGrid/Scroll/scoreText"]
+margin_left = 301.0
+margin_right = 582.0
+margin_bottom = 481.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+
+[node name="Player" type="Label" parent="VGrid/HGrid/Scroll/scoreText"]
+margin_left = 602.0
+margin_right = 883.0
+margin_bottom = 481.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+
+[node name="Close" type="Button" parent="VGrid"]
+margin_left = 468.0
+margin_top = 540.0
+margin_right = 515.0
+margin_bottom = 560.0
+hint_tooltip = "Closes the scoreboard window."
+size_flags_horizontal = 4
+text = "Close"
+[connection signal="pressed" from="VGrid/Close" to="." method="_on_Close_pressed"]

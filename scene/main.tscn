@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/themes/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/font/dynamic/xLarge.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/local/main.gd" type="Script" id=4]
+
+[node name="MC" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="."]
+margin_left = 137.0
+margin_top = 431.0
+margin_right = 462.0
+margin_bottom = 592.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 30
+
+[node name="Title" type="Label" parent="VB"]
+margin_right = 325.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 3 )
+text = "Kyron's Nouns"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="VB"]
+margin_top = 92.0
+margin_right = 325.0
+margin_bottom = 96.0
+
+[node name="Start" type="Button" parent="VB"]
+margin_top = 126.0
+margin_right = 325.0
+margin_bottom = 161.0
+text = "Start"
+[connection signal="pressed" from="VB/Start" to="." method="_on_Start_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/V.wav-c49cd1a95f08f12c0189adbc28d6a8dc.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Letters/V.wav"
+dest_files=[ "res://.import/V.wav-c49cd1a95f08f12c0189adbc28d6a8dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
