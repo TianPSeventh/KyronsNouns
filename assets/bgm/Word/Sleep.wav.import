@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sleep.wav-ce00e4078185490fdd7352a3f7a9bb12.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Sleep.wav"
+dest_files=[ "res://.import/Sleep.wav-ce00e4078185490fdd7352a3f7a9bb12.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

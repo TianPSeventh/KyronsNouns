@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gum.wav-6341baa05ab8dc1974175ef816360a83.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Gum.wav"
+dest_files=[ "res://.import/Gum.wav-6341baa05ab8dc1974175ef816360a83.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

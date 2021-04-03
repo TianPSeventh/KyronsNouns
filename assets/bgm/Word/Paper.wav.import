@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Paper.wav-5e763fc6aab70237467f37c01cefc386.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Paper.wav"
+dest_files=[ "res://.import/Paper.wav-5e763fc6aab70237467f37c01cefc386.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bug.wav-28655b88734f2d80c92a730a9a87c045.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Bug.wav"
+dest_files=[ "res://.import/Bug.wav-28655b88734f2d80c92a730a9a87c045.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

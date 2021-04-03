@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Baby.wav-30a8364af4cc23aa2f74d37e69897f19.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Baby.wav"
+dest_files=[ "res://.import/Baby.wav-30a8364af4cc23aa2f74d37e69897f19.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

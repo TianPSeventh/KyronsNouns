@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Coat.wav-9699c931d234b881425b3e356b25c1be.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Coat.wav"
+dest_files=[ "res://.import/Coat.wav-9699c931d234b881425b3e356b25c1be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

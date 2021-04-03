@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Apple.wav-6d3b413d19474c3a64f7f0fdd3383c78.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Apple.wav"
+dest_files=[ "res://.import/Apple.wav-6d3b413d19474c3a64f7f0fdd3383c78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

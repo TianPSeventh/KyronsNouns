@@ -65,7 +65,6 @@ size_flags_vertical = 3
 [node name="Panel" type="Panel" parent="VB/MC"]
 margin_right = 560.0
 margin_bottom = 444.0
-size_flags_vertical = 3
 custom_styles/panel = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="VB/MC"]
@@ -78,12 +77,11 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="Img" type="NinePatchRect" parent="VB/MC"]
+[node name="Img" type="TextureRect" parent="VB/MC"]
 margin_right = 560.0
 margin_bottom = 444.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+expand = true
+stretch_mode = 6
 
 [node name="HB" type="HBoxContainer" parent="VB"]
 margin_top = 519.0

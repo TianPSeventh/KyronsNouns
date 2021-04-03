@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Toilet.wav-68761ae3a9c3f25e3dd34dc46c778620.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Toilet.wav"
+dest_files=[ "res://.import/Toilet.wav-68761ae3a9c3f25e3dd34dc46c778620.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

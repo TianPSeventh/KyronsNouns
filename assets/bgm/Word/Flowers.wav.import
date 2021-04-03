@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Flowers.wav-46d7215b8067fdc9ff7fc3b79cafa081.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Flowers.wav"
+dest_files=[ "res://.import/Flowers.wav-46d7215b8067fdc9ff7fc3b79cafa081.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

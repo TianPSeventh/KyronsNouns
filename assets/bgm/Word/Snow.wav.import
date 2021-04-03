@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Snow.wav-5c485d5711b7f16c499ba1ea6131c163.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Snow.wav"
+dest_files=[ "res://.import/Snow.wav-5c485d5711b7f16c499ba1ea6131c163.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Clock.wav-b2f5b4d6c3eaf23a71fb6f51a84fdfd5.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Clock.wav"
+dest_files=[ "res://.import/Clock.wav-b2f5b4d6c3eaf23a71fb6f51a84fdfd5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

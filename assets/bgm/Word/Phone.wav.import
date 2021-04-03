@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Phone.wav-dcca55c3c3c4fa444adc06464fc310e6.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Phone.wav"
+dest_files=[ "res://.import/Phone.wav-dcca55c3c3c4fa444adc06464fc310e6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

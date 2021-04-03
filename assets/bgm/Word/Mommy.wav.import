@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mommy.wav-2165c40ca07132088c623c13ca045548.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Mommy.wav"
+dest_files=[ "res://.import/Mommy.wav-2165c40ca07132088c623c13ca045548.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

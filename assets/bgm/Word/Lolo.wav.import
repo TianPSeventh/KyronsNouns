@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Lolo.wav-139eed6df97a0b5a798ad17ddd283900.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Lolo.wav"
+dest_files=[ "res://.import/Lolo.wav-139eed6df97a0b5a798ad17ddd283900.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
