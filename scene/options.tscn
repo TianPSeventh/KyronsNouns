@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/global/data.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/dynamic/large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/themes/new_theme.tres" type="Theme" id=3]
-[ext_resource path="res://prefabs/menus/Toggle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/styleBox/Social.tres" type="StyleBox" id=4]
+[ext_resource path="res://prefabs/menus/Selector.tscn" type="PackedScene" id=6]
 
 [node name="options" type="CenterContainer"]
 pause_mode = 2
@@ -14,39 +15,75 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BGME" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
-[node name="VB" type="VBoxContainer" parent="."]
-margin_left = 187.0
-margin_top = 340.0
-margin_right = 412.0
-margin_bottom = 684.0
+[node name="MC" type="MarginContainer" parent="."]
+margin_left = 95.0
+margin_top = 320.0
+margin_right = 504.0
+margin_bottom = 704.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MC"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 399.0
+margin_bottom = 374.0
+custom_styles/panel = ExtResource( 4 )
+
+[node name="MC2" type="MarginContainer" parent="MC"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 399.0
+margin_bottom = 374.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="MC/MC2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 379.0
+margin_bottom = 354.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 15
 
-[node name="Label" type="Label" parent="VB"]
-margin_right = 225.0
+[node name="Label" type="Label" parent="MC/MC2/VB"]
+margin_right = 369.0
 margin_bottom = 44.0
 custom_fonts/font = ExtResource( 2 )
 text = "Options"
 align = 1
 
-[node name="Resume" type="Button" parent="VB"]
+[node name="Resume" type="Button" parent="MC/MC2/VB"]
 margin_top = 59.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 94.0
 text = "Resume"
 
-[node name="Orientation" type="HBoxContainer" parent="VB"]
+[node name="Orientation" type="HBoxContainer" parent="MC/MC2/VB"]
 margin_top = 109.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 144.0
 custom_constants/separation = 10
 
-[node name="Label" type="Label" parent="VB/Orientation"]
+[node name="Label" type="Label" parent="MC/MC2/VB/Orientation"]
 margin_top = 2.0
 margin_right = 176.0
 margin_bottom = 32.0
@@ -54,40 +91,44 @@ size_flags_horizontal = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Landscape Mode"
 
-[node name="Toggle" parent="VB/Orientation" instance=ExtResource( 5 )]
-margin_left = 186.0
-margin_right = 225.0
+[node name="Selector" parent="MC/MC2/VB/Orientation" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 235.0
+margin_right = 369.0
 margin_bottom = 35.0
 
-[node name="Button" type="Button" parent="VB"]
+[node name="Button" type="Button" parent="MC/MC2/VB"]
+visible = false
 margin_top = 159.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 194.0
 
-[node name="Button2" type="Button" parent="VB"]
+[node name="Button2" type="Button" parent="MC/MC2/VB"]
+visible = false
 margin_top = 209.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 244.0
 
-[node name="Main" type="Button" parent="VB"]
+[node name="Main" type="Button" parent="MC/MC2/VB"]
 margin_top = 259.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 294.0
 text = "Main Menu"
 
-[node name="Quit" type="Button" parent="VB"]
+[node name="Quit" type="Button" parent="MC/MC2/VB"]
 margin_top = 309.0
-margin_right = 225.0
+margin_right = 369.0
 margin_bottom = 344.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="screen_orientation_changed" from="." to="." method="_on_options_screen_orientation_changed"]
 [connection signal="visibility_changed" from="." to="." method="_on_options_visibility_changed"]
 [connection signal="finished" from="BGME" to="." method="_on_BGME_finished"]
-[connection signal="pressed" from="VB/Resume" to="." method="openOptions" binds= [ false ]]
-[connection signal="toggled" from="VB/Orientation/Toggle" to="." method="OrientationLandscape"]
-[connection signal="pressed" from="VB/Main" to="." method="_on_Main_pressed"]
-[connection signal="pressed" from="VB/Main" to="." method="openOptions" binds= [ false ]]
-[connection signal="pressed" from="VB/Quit" to="." method="openOptions" binds= [ false ]]
-[connection signal="pressed" from="VB/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MC/MC2/VB/Resume" to="." method="openOptions" binds= [ false ]]
+[connection signal="pressed" from="MC/MC2/VB/Main" to="." method="_on_Main_pressed"]
+[connection signal="pressed" from="MC/MC2/VB/Main" to="." method="openOptions" binds= [ false ]]
+[connection signal="pressed" from="MC/MC2/VB/Quit" to="." method="openOptions" binds= [ false ]]
+[connection signal="pressed" from="MC/MC2/VB/Quit" to="." method="_on_Quit_pressed"]

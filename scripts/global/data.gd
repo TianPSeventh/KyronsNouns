@@ -1,25 +1,32 @@
 extends Control
 #Contains all the variabled data
 
-const WINDOW_SIZE := OS.window_size
+signal screen_orientation_changed
 
 var Options = null
 var Data = null
 var BGME = "BGME"
-var LandscapeMode:bool = false
+var BGMQueue := []
+var LandscapeMode:bool = true
+var OrientationSensor = false
 var ListOfNodesAffectedByOrientation: Array = []
 
+func fontResize(enlarge:bool):
+	var addSize = 50 if enlarge else 0
+	load("res://assets/font/dynamic/large.tres").set("size", 40 + addSize)
+	load("res://assets/font/dynamic/medium.tres").set("size", 29 + addSize)
+	load("res://assets/font/dynamic/small.tres").set("size", 21 + addSize)
+	load("res://assets/font/dynamic/xLarge.tres").set("size", 53 + addSize)
 
 
+func _ready():
+	var temp = get_viewport()
+	$MC/MC2/VB/Orientation/Selector.initSelection(["Landscape","Portrait","Sensored"], [self,"setOrientationMode"])
+	temp.connect("size_changed", self, "_on_size_changed")
 
-#func _ready():
-#	get_viewport().connect("size_changed", self, "_on_size_changed")
-
-#func _on_size_changed():
-#	var s := OS.window_size
-#
-#	#emit_signal("screen_orientation_changed",  "landscape" if WINDOW_SIZE.x < s.x else "portrait")
-#	return   # somehow function triggers twice
+func _on_size_changed():
+	emit_signal("screen_orientation_changed",  true if OS.window_size.x >  OS.window_size.y else false)
+	return   # somehow function triggers twice
 
 func openOptions(OpenOption:bool = true):
 	if get_index() != get_parent().get_child_count() - 1:
@@ -32,9 +39,9 @@ func toggleOptions():
 func _on_options_visibility_changed():
 	get_tree().paused = visible
 
-func changeAndPlayBGME(inputted:String):
+func changeAndPlayBGME(inputted:String, path:String = "Letters"):
 	get_node(BGME).stop()
-	get_node(BGME).stream = load("res://assets/bgm/Letters/%s.wav" % inputted)
+	get_node(BGME).stream = load("res://assets/bgm/%s/%s.wav" % [path,inputted])
 	get_node(BGME).play()
 
 func _notification(what):
@@ -50,12 +57,43 @@ func _on_Main_pressed():
 	GM.changeScene(self,"res://scene/main.tscn")
 
 
+func setOrientationMode(raw):
+	var newOrient
+	
+	OrientationSensor = false
+	match raw.front():
+		"Landscape":
+			newOrient = true
+		"Portrait":
+			newOrient = false
+		"Sensored":
+			OrientationSensor = true
+			newOrient = true if OS.window_size.x >  OS.window_size.y else false
+	OrientationLandscape(newOrient)
+
+
 func OrientationLandscape(button_pressed):
 	LandscapeMode = button_pressed
-	
+	fontResize(!button_pressed)
 	for x in ListOfNodesAffectedByOrientation:
 		x.changeOrientation(button_pressed)
 
 
+func declareAnswer(Inputted:Array):
+	BGMQueue.push_back(Inputted)
+
+
 func _on_BGME_finished():
-	pass # Replace with function body.
+	var BGMTemp:FuncRef
+	
+	if !BGMQueue.empty():
+		if BGMQueue.front().size() == 2:
+			changeAndPlayBGME(BGMQueue.front().pop_front(), "Word")
+		else:
+			BGMTemp = BGMQueue.pop_front().front()
+			BGMTemp.call_func()
+
+
+func _on_options_screen_orientation_changed(orientation):
+	if OrientationSensor:
+		OrientationLandscape(orientation)

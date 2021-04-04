@@ -16,7 +16,7 @@ class funcRefArgu:
 		function = new_func
 		parameter = new_param
 	
-	static func newInit(new_inst:Object, new_func:String, new_param:Array, newAFR = funcRefArgu.new()) -> funcRefArgu:
+	static func newInit(new_inst:Object, new_func:String, new_param:Array = [], newAFR = funcRefArgu.new()) -> funcRefArgu:
 		newAFR._init(new_inst, new_func, new_param)
 		return newAFR
 

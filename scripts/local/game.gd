@@ -33,13 +33,13 @@ func setChoices() -> void:
 func setHint():
 	var image:String = "res://assets/2D/%s.png" % target
 	
-	
-	if Directory.new().file_exists(image):
-		$VB/MC/Img.texture = load(image)
-		$"VB/MC/Label".text = ""
-	else:
-		$VB/MC/Img.texture = null
-		$"VB/MC/Label".text = target
+	$VB/MC/Img.texture = load(image)
+#	if Directory.new().file_exists(image):
+#		$VB/MC/Img.texture = load(image)
+#		$"VB/MC/Label".text = ""
+#	else:
+#		$VB/MC/Img.texture = null
+#		$"VB/MC/Label".text = target
 
 func setStage():
 	var tempHolder:HBoxContainer = get_node(hiddenLetters)
@@ -74,7 +74,7 @@ func checkLetter(bText:String):
 		if current < target.length():
 			setChoices()
 		else:
-			setStage()
+			GData.declareAnswer([target, funcref(self, "setStage")])
 
 
 func _on_Timer_timeout():
@@ -85,3 +85,4 @@ func _on_Timer_timeout():
 func _on_Pause_pressed():
 	if !GData.visible:
 		GData.toggleOptions()
+

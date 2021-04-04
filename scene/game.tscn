@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/new_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/local/game.gd" type="Script" id=2]
 [ext_resource path="res://scripts/local/BGrid.gd" type="Script" id=3]
 [ext_resource path="res://assets/styleBox/header.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/font/dynamic/large.tres" type="DynamicFont" id=5]
 
 [node name="MC" type="MarginContainer"]
 anchor_right = 1.0
@@ -24,76 +23,67 @@ __meta__ = {
 [node name="VB" type="VBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 580.0
-margin_bottom = 1004.0
+margin_right = 1004.0
+margin_bottom = 580.0
 custom_constants/separation = 20
 
 [node name="Header" type="HBoxContainer" parent="VB"]
-margin_right = 560.0
-margin_bottom = 35.0
+margin_right = 984.0
+margin_bottom = 44.0
 
 [node name="Pause" type="Button" parent="VB/Header"]
-margin_right = 86.0
-margin_bottom = 35.0
+margin_right = 110.0
+margin_bottom = 44.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "|| Pause"
 
 [node name="StageLabel" type="Label" parent="VB/Header"]
-margin_left = 90.0
+margin_left = 114.0
 margin_top = 2.0
-margin_right = 468.0
-margin_bottom = 32.0
+margin_right = 866.0
+margin_bottom = 41.0
 size_flags_horizontal = 3
 align = 1
 
 [node name="Time" type="Label" parent="VB/Header"]
-margin_left = 472.0
+margin_left = 870.0
 margin_top = 2.0
-margin_right = 560.0
-margin_bottom = 32.0
+margin_right = 984.0
+margin_bottom = 41.0
 text = "00:00:00"
 align = 2
 
 [node name="MC" type="MarginContainer" parent="VB"]
-margin_top = 55.0
-margin_right = 560.0
-margin_bottom = 499.0
+margin_top = 64.0
+margin_right = 984.0
+margin_bottom = 368.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="VB/MC"]
-margin_right = 560.0
-margin_bottom = 444.0
+margin_right = 984.0
+margin_bottom = 304.0
 custom_styles/panel = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="VB/MC"]
-margin_right = 560.0
-margin_bottom = 444.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-custom_fonts/font = ExtResource( 5 )
-align = 1
-valign = 1
-uppercase = true
-
 [node name="Img" type="TextureRect" parent="VB/MC"]
-margin_right = 560.0
-margin_bottom = 444.0
+margin_right = 984.0
+margin_bottom = 304.0
 expand = true
 stretch_mode = 6
 
 [node name="HB" type="HBoxContainer" parent="VB"]
-margin_top = 519.0
-margin_right = 560.0
-margin_bottom = 519.0
+margin_top = 388.0
+margin_right = 984.0
+margin_bottom = 388.0
 custom_constants/separation = 10
 alignment = 1
 
 [node name="Keys" type="GridContainer" parent="VB"]
-margin_top = 539.0
-margin_right = 560.0
-margin_bottom = 984.0
+visible = false
+margin_top = 194.0
+margin_right = 984.0
+margin_bottom = 388.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 10
@@ -101,341 +91,340 @@ custom_constants/hseparation = 10
 columns = 3
 
 [node name="B1" type="Button" parent="VB/Keys"]
-margin_right = 180.0
-margin_bottom = 141.0
+margin_right = 321.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1"
 script = ExtResource( 3 )
 
 [node name="B2" type="Button" parent="VB/Keys"]
-margin_left = 190.0
-margin_right = 370.0
-margin_bottom = 141.0
+margin_left = 331.0
+margin_right = 652.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "2"
 script = ExtResource( 3 )
 
 [node name="B3" type="Button" parent="VB/Keys"]
-margin_left = 380.0
-margin_right = 560.0
-margin_bottom = 141.0
+margin_left = 662.0
+margin_right = 983.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "3"
 script = ExtResource( 3 )
 
 [node name="B4" type="Button" parent="VB/Keys"]
-margin_top = 151.0
-margin_right = 180.0
-margin_bottom = 292.0
+margin_top = 68.0
+margin_right = 321.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "4"
 script = ExtResource( 3 )
 
 [node name="B5" type="Button" parent="VB/Keys"]
-margin_left = 190.0
-margin_top = 151.0
-margin_right = 370.0
-margin_bottom = 292.0
+margin_left = 331.0
+margin_top = 68.0
+margin_right = 652.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "5"
 script = ExtResource( 3 )
 
 [node name="B6" type="Button" parent="VB/Keys"]
-margin_left = 380.0
-margin_top = 151.0
-margin_right = 560.0
-margin_bottom = 292.0
+margin_left = 662.0
+margin_top = 68.0
+margin_right = 983.0
+margin_bottom = 126.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "6"
 script = ExtResource( 3 )
 
 [node name="B7" type="Button" parent="VB/Keys"]
-margin_top = 302.0
-margin_right = 180.0
-margin_bottom = 443.0
+margin_top = 136.0
+margin_right = 321.0
+margin_bottom = 194.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "7"
 script = ExtResource( 3 )
 
 [node name="B8" type="Button" parent="VB/Keys"]
-margin_left = 190.0
-margin_top = 302.0
-margin_right = 370.0
-margin_bottom = 443.0
+margin_left = 331.0
+margin_top = 136.0
+margin_right = 652.0
+margin_bottom = 194.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "8"
 script = ExtResource( 3 )
 
 [node name="B9" type="Button" parent="VB/Keys"]
-margin_left = 380.0
-margin_top = 302.0
-margin_right = 560.0
-margin_bottom = 443.0
+margin_left = 662.0
+margin_top = 136.0
+margin_right = 983.0
+margin_bottom = 194.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "9"
 script = ExtResource( 3 )
 
 [node name="Keyboard" type="VBoxContainer" parent="VB"]
-visible = false
-margin_top = 859.0
-margin_right = 560.0
-margin_bottom = 984.0
+margin_top = 408.0
+margin_right = 984.0
+margin_bottom = 560.0
 size_flags_horizontal = 3
 custom_constants/separation = 10
 
 [node name="Row1" type="HBoxContainer" parent="VB/Keyboard"]
-margin_right = 560.0
-margin_bottom = 35.0
+margin_right = 984.0
+margin_bottom = 44.0
 custom_constants/separation = 10
 
 [node name="Q" type="Button" parent="VB/Keyboard/Row1"]
-margin_right = 47.0
-margin_bottom = 35.0
+margin_right = 89.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Q"
 script = ExtResource( 3 )
 
 [node name="W" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 57.0
-margin_right = 104.0
-margin_bottom = 35.0
+margin_left = 99.0
+margin_right = 188.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "W"
 script = ExtResource( 3 )
 
 [node name="E" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 114.0
-margin_right = 161.0
-margin_bottom = 35.0
+margin_left = 198.0
+margin_right = 288.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "E"
 script = ExtResource( 3 )
 
 [node name="R" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 171.0
-margin_right = 218.0
-margin_bottom = 35.0
+margin_left = 298.0
+margin_right = 387.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "R"
 script = ExtResource( 3 )
 
 [node name="T" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 228.0
-margin_right = 275.0
-margin_bottom = 35.0
+margin_left = 397.0
+margin_right = 487.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "T"
 script = ExtResource( 3 )
 
 [node name="Y" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 285.0
-margin_right = 332.0
-margin_bottom = 35.0
+margin_left = 497.0
+margin_right = 586.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Y"
 script = ExtResource( 3 )
 
 [node name="U" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 342.0
-margin_right = 389.0
-margin_bottom = 35.0
+margin_left = 596.0
+margin_right = 685.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "U"
 script = ExtResource( 3 )
 
 [node name="I" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 399.0
-margin_right = 446.0
-margin_bottom = 35.0
+margin_left = 695.0
+margin_right = 785.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "I"
 script = ExtResource( 3 )
 
 [node name="O" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 456.0
-margin_right = 503.0
-margin_bottom = 35.0
+margin_left = 795.0
+margin_right = 884.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "O"
 script = ExtResource( 3 )
 
 [node name="P" type="Button" parent="VB/Keyboard/Row1"]
-margin_left = 513.0
-margin_right = 560.0
-margin_bottom = 35.0
+margin_left = 894.0
+margin_right = 984.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "P"
 script = ExtResource( 3 )
 
 [node name="Row2" type="HBoxContainer" parent="VB/Keyboard"]
-margin_top = 45.0
-margin_right = 560.0
-margin_bottom = 80.0
+margin_top = 54.0
+margin_right = 984.0
+margin_bottom = 98.0
 size_flags_horizontal = 5
 custom_constants/separation = 10
 
 [node name="A" type="Button" parent="VB/Keyboard/Row2"]
-margin_right = 53.0
-margin_bottom = 35.0
+margin_right = 100.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "A"
 script = ExtResource( 3 )
 
 [node name="S" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 63.0
-margin_right = 116.0
-margin_bottom = 35.0
+margin_left = 110.0
+margin_right = 210.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "S"
 script = ExtResource( 3 )
 
 [node name="D" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 126.0
-margin_right = 179.0
-margin_bottom = 35.0
+margin_left = 220.0
+margin_right = 321.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "D"
 script = ExtResource( 3 )
 
 [node name="F" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 189.0
-margin_right = 243.0
-margin_bottom = 35.0
+margin_left = 331.0
+margin_right = 431.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "F"
 script = ExtResource( 3 )
 
 [node name="G" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 253.0
-margin_right = 306.0
-margin_bottom = 35.0
+margin_left = 441.0
+margin_right = 542.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "G"
 script = ExtResource( 3 )
 
 [node name="H" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 316.0
-margin_right = 369.0
-margin_bottom = 35.0
+margin_left = 552.0
+margin_right = 652.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "H"
 script = ExtResource( 3 )
 
 [node name="J" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 379.0
-margin_right = 433.0
-margin_bottom = 35.0
+margin_left = 662.0
+margin_right = 763.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "J"
 script = ExtResource( 3 )
 
 [node name="K" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 443.0
-margin_right = 496.0
-margin_bottom = 35.0
+margin_left = 773.0
+margin_right = 873.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "K"
 script = ExtResource( 3 )
 
 [node name="L" type="Button" parent="VB/Keyboard/Row2"]
-margin_left = 506.0
-margin_right = 560.0
-margin_bottom = 35.0
+margin_left = 883.0
+margin_right = 984.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "L"
 script = ExtResource( 3 )
 
 [node name="Row3" type="HBoxContainer" parent="VB/Keyboard"]
-margin_top = 90.0
-margin_right = 560.0
-margin_bottom = 125.0
+margin_top = 108.0
+margin_right = 984.0
+margin_bottom = 152.0
 custom_constants/separation = 10
 
 [node name="Z" type="Button" parent="VB/Keyboard/Row3"]
-margin_right = 71.0
-margin_bottom = 35.0
+margin_right = 132.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Z"
 script = ExtResource( 3 )
 
 [node name="X" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 81.0
-margin_right = 152.0
-margin_bottom = 35.0
+margin_left = 142.0
+margin_right = 274.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "X"
 script = ExtResource( 3 )
 
 [node name="C" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 162.0
-margin_right = 234.0
-margin_bottom = 35.0
+margin_left = 284.0
+margin_right = 416.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "C"
 script = ExtResource( 3 )
 
 [node name="V" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 244.0
-margin_right = 315.0
-margin_bottom = 35.0
+margin_left = 426.0
+margin_right = 558.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "V"
 script = ExtResource( 3 )
 
 [node name="B" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 325.0
-margin_right = 397.0
-margin_bottom = 35.0
+margin_left = 568.0
+margin_right = 700.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "B"
 script = ExtResource( 3 )
 
 [node name="N" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 407.0
-margin_right = 478.0
-margin_bottom = 35.0
+margin_left = 710.0
+margin_right = 842.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "N"
 script = ExtResource( 3 )
 
 [node name="M" type="Button" parent="VB/Keyboard/Row3"]
-margin_left = 488.0
-margin_right = 560.0
-margin_bottom = 35.0
+margin_left = 852.0
+margin_right = 984.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "M"

@@ -14,29 +14,29 @@ __meta__ = {
 }
 
 [node name="VB" type="VBoxContainer" parent="."]
-margin_left = 137.0
-margin_top = 431.0
-margin_right = 462.0
-margin_bottom = 592.0
+margin_left = 342.0
+margin_top = 216.0
+margin_right = 681.0
+margin_bottom = 383.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 30
 
 [node name="Title" type="Label" parent="VB"]
-margin_right = 325.0
-margin_bottom = 62.0
+margin_right = 339.0
+margin_bottom = 65.0
 custom_fonts/font = ExtResource( 3 )
 text = "Kyron's Nouns"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="VB"]
-margin_top = 92.0
-margin_right = 325.0
-margin_bottom = 96.0
+margin_top = 95.0
+margin_right = 339.0
+margin_bottom = 99.0
 
 [node name="Start" type="Button" parent="VB"]
-margin_top = 126.0
-margin_right = 325.0
-margin_bottom = 161.0
+margin_top = 129.0
+margin_right = 339.0
+margin_bottom = 167.0
 text = "Start"
 [connection signal="pressed" from="VB/Start" to="." method="_on_Start_pressed"]

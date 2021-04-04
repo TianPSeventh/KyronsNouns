@@ -3,6 +3,12 @@ extends HBoxContainer
 var placeHolder:String = "No Item."
 var selected:int = 0
 var list:Array = []
+var reaction = null
+
+func initSelection(inputted:Array, inputReaction = null) -> void:
+	list = inputted
+	$Current.text = list.front()
+	reaction = inputReaction
 
 func setSelection(next:bool):
 	if list.empty():
@@ -12,6 +18,8 @@ func setSelection(next:bool):
 		if selected < 0:
 			selected += list.size()
 		$Current.text = list[selected]
+		if reaction != null:
+			GM.funcRefArgu.newInit(reaction[0], reaction[1]).run_(list[selected])
 
 func getCurrent():
 	return list[selected]
