@@ -7,6 +7,7 @@ var target:String = ""
 var list:Array = GM.nouns.duplicate()
 var hintBox:PackedScene = load("res://prefabs/menus/Label.tscn")
 var hintArray:Array = []
+var keyboard:bool = true
 var keys = "VB/Keys"
 var hiddenLetters = "VB/HB"
 var timeLabel = "VB/Header/Time"
@@ -31,20 +32,13 @@ func setChoices() -> void:
 		x.text = ret.pop_front()
 
 func setHint():
-	var image:String = "res://assets/2D/%s.png" % target
-	
-	$VB/MC/Img.texture = load(image)
-#	if Directory.new().file_exists(image):
-#		$VB/MC/Img.texture = load(image)
-#		$"VB/MC/Label".text = ""
-#	else:
-#		$VB/MC/Img.texture = null
-#		$"VB/MC/Label".text = target
+	$VB/MC/Img.texture = load("res://assets/2D/%s.png" % target)
 
 func setStage():
 	var tempHolder:HBoxContainer = get_node(hiddenLetters)
 	var temp:int = GM.randomNumber(list.size())
 	
+	keyboard = true
 	target = list[temp]
 	list.erase(target)
 	current = 0
@@ -60,21 +54,22 @@ func setStage():
 	stageNum += 1
 	if list.empty():
 		list = GM.nouns.duplicate()
-	#res://assets/2D/Apple.png
 
 func _enter_tree():
 	GData.ListOfNodesAffectedByOrientation.push_back(self)
 	setStage()
 
 func checkLetter(bText:String):
-	GData.changeAndPlayBGME(bText)
-	if get_node(hiddenLetters).get_child(current).text.capitalize() == bText.capitalize():
-		get_node(hiddenLetters).get_child(current).percent_visible = 1
-		current += 1
-		if current < target.length():
-			setChoices()
-		else:
-			GData.declareAnswer([target, funcref(self, "setStage")])
+	if keyboard:
+		GData.changeAndPlayBGME(bText)
+		if get_node(hiddenLetters).get_child(current).text.capitalize() == bText.capitalize():
+			get_node(hiddenLetters).get_child(current).showFull()
+			current += 1
+			if current < target.length():
+				setChoices()
+			else:
+				keyboard = false
+				GData.declareAnswer([target, funcref(self, "setStage")])
 
 
 func _on_Timer_timeout():

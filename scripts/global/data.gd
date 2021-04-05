@@ -8,20 +8,16 @@ var Data = null
 var BGME = "BGME"
 var BGMQueue := []
 var LandscapeMode:bool = true
-var OrientationSensor = false
+var OrientationSensor = true
 var ListOfNodesAffectedByOrientation: Array = []
+var hints:bool = true
 
-func fontResize(enlarge:bool):
-	var addSize = 50 if enlarge else 0
-	load("res://assets/font/dynamic/large.tres").set("size", 40 + addSize)
-	load("res://assets/font/dynamic/medium.tres").set("size", 29 + addSize)
-	load("res://assets/font/dynamic/small.tres").set("size", 21 + addSize)
-	load("res://assets/font/dynamic/xLarge.tres").set("size", 53 + addSize)
+
 
 
 func _ready():
 	var temp = get_viewport()
-	$MC/MC2/VB/Orientation/Selector.initSelection(["Landscape","Portrait","Sensored"], [self,"setOrientationMode"])
+	$MC/MC2/VB/Orientation/Selector.initSelection(["Sensored","Landscape","Portrait"], [self,"setOrientationMode"])
 	temp.connect("size_changed", self, "_on_size_changed")
 
 func _on_size_changed():
@@ -48,14 +44,11 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		GM.quitGame()
 
-
 func _on_Quit_pressed():
 	GM.quitGame()
 
-
 func _on_Main_pressed():
 	GM.changeScene(self,"res://scene/main.tscn")
-
 
 func setOrientationMode(raw):
 	var newOrient
@@ -71,17 +64,13 @@ func setOrientationMode(raw):
 			newOrient = true if OS.window_size.x >  OS.window_size.y else false
 	OrientationLandscape(newOrient)
 
-
 func OrientationLandscape(button_pressed):
 	LandscapeMode = button_pressed
-	fontResize(!button_pressed)
 	for x in ListOfNodesAffectedByOrientation:
 		x.changeOrientation(button_pressed)
 
-
 func declareAnswer(Inputted:Array):
 	BGMQueue.push_back(Inputted)
-
 
 func _on_BGME_finished():
 	var BGMTemp:FuncRef
@@ -92,7 +81,6 @@ func _on_BGME_finished():
 		else:
 			BGMTemp = BGMQueue.pop_front().front()
 			BGMTemp.call_func()
-
 
 func _on_options_screen_orientation_changed(orientation):
 	if OrientationSensor:

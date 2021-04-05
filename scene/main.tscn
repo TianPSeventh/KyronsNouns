@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://prefabs/menus/Toggle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/font/dynamic/xLarge.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/local/main.gd" type="Script" id=4]
 
@@ -14,29 +15,47 @@ __meta__ = {
 }
 
 [node name="VB" type="VBoxContainer" parent="."]
-margin_left = 342.0
-margin_top = 216.0
-margin_right = 681.0
-margin_bottom = 383.0
+margin_left = 324.0
+margin_top = 173.0
+margin_right = 700.0
+margin_bottom = 426.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 30
 
 [node name="Title" type="Label" parent="VB"]
-margin_right = 339.0
-margin_bottom = 65.0
+margin_right = 376.0
+margin_bottom = 71.0
 custom_fonts/font = ExtResource( 3 )
 text = "Kyron's Nouns"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="VB"]
-margin_top = 95.0
-margin_right = 339.0
-margin_bottom = 99.0
+margin_top = 101.0
+margin_right = 376.0
+margin_bottom = 105.0
+
+[node name="Hints" type="HBoxContainer" parent="VB"]
+margin_left = 77.0
+margin_top = 135.0
+margin_right = 298.0
+margin_bottom = 179.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VB/Hints"]
+margin_top = 2.0
+margin_right = 167.0
+margin_bottom = 41.0
+text = "Show Hints:"
+
+[node name="Toggle" parent="VB/Hints" instance=ExtResource( 2 )]
+margin_left = 171.0
+margin_right = 221.0
+margin_bottom = 44.0
 
 [node name="Start" type="Button" parent="VB"]
-margin_top = 129.0
-margin_right = 339.0
-margin_bottom = 167.0
+margin_top = 209.0
+margin_right = 376.0
+margin_bottom = 253.0
 text = "Start"
 [connection signal="pressed" from="VB/Start" to="." method="_on_Start_pressed"]
