@@ -13,7 +13,12 @@ var ListOfNodesAffectedByOrientation: Array = []
 var hints:bool = true
 
 
-
+func fontResize():
+	var addSize = (OS.window_size.x if OS.window_size.x >  OS.window_size.y else OS.window_size.y) / 1024
+	load("res://assets/font/dynamic/large.tres").set("size", 40 * addSize)
+	load("res://assets/font/dynamic/medium.tres").set("size", 29 * addSize)
+	load("res://assets/font/dynamic/small.tres").set("size", 21 * addSize)
+	load("res://assets/font/dynamic/xLarge.tres").set("size", 53 * addSize)
 
 func _ready():
 	var temp = get_viewport()
@@ -65,6 +70,7 @@ func setOrientationMode(raw):
 	OrientationLandscape(newOrient)
 
 func OrientationLandscape(button_pressed):
+	fontResize()
 	LandscapeMode = button_pressed
 	for x in ListOfNodesAffectedByOrientation:
 		x.changeOrientation(button_pressed)
