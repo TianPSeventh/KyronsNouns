@@ -58,6 +58,7 @@ func setStage():
 func _enter_tree():
 	GData.ListOfNodesAffectedByOrientation.push_back(self)
 	setStage()
+	GData.reloadOrientation()
 
 func checkLetter(bText:String):
 	if keyboard:

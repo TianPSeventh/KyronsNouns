@@ -13,6 +13,9 @@ var ListOfNodesAffectedByOrientation: Array = []
 var hints:bool = true
 
 
+func reloadOrientation() -> void:
+	OrientationLandscape(true if OS.window_size.x > OS.window_size.y else false)
+
 func fontResize():
 	var addSize = (OS.window_size.x if OS.window_size.x >  OS.window_size.y else OS.window_size.y) / 1024
 	load("res://assets/font/dynamic/large.tres").set("size", 40 * addSize)
@@ -21,6 +24,7 @@ func fontResize():
 	load("res://assets/font/dynamic/xLarge.tres").set("size", 53 * addSize)
 
 func _ready():
+	fontResize()
 	var temp = get_viewport()
 	$MC/MC2/VB/Orientation/Selector.initSelection(["Sensored","Landscape","Portrait"], [self,"setOrientationMode"])
 	temp.connect("size_changed", self, "_on_size_changed")
@@ -53,6 +57,7 @@ func _on_Quit_pressed():
 	GM.quitGame()
 
 func _on_Main_pressed():
+	ListOfNodesAffectedByOrientation.clear()
 	GM.changeScene(self,"res://scene/main.tscn")
 
 func setOrientationMode(raw):
