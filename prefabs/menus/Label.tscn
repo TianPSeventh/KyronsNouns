@@ -14,7 +14,6 @@ custom_fonts/font = ExtResource( 1 )
 text = "d"
 align = 1
 valign = 1
-uppercase = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

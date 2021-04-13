@@ -30,9 +30,10 @@ func setChoices() -> void:
 	for x in get_node(keys).get_children():
 		ret.shuffle()
 		x.text = ret.pop_front()
+	setKeyboardCase()
 
 func setHint():
-	$VB/MC/Img.texture = load("res://assets/2D/%s.png" % target)
+	$VB/MC/Img.texture = load("res://assets/2D/%s.png" % target.capitalize())
 
 func setStage():
 	var tempHolder:HBoxContainer = get_node(hiddenLetters)
@@ -41,6 +42,13 @@ func setStage():
 	keyboard = true
 	target = list[temp]
 	list.erase(target)
+	match GData.mode:
+		"Uppercase":
+			target = target.to_upper()
+		"Lowercase":
+			target = target.to_lower()
+		"Capitalize":
+			target = target.capitalize()
 	current = 0
 	hintArray = []
 	GM.remove_children(tempHolder)
@@ -56,9 +64,21 @@ func setStage():
 		list = GM.nouns.duplicate()
 
 func _enter_tree():
+	GData.activeScene = self
+
+func _ready():
 	GData.ListOfNodesAffectedByOrientation.push_back(self)
 	setStage()
 	GData.reloadOrientation()
+
+func setKeyboardCase() -> void:
+	match GData.mode:
+		"Uppercase":
+			get_tree().call_group("keyButtons","uppercaseKB")
+		"Lowercase":
+			get_tree().call_group("keyButtons","lowercaseKB")
+		"Capitalize":
+			get_tree().call_group("keyButtons","capitalizeKB", (current == 0))
 
 func checkLetter(bText:String):
 	if keyboard:
@@ -79,6 +99,6 @@ func _on_Timer_timeout():
 
 
 func _on_Pause_pressed():
-	if !GData.visible:
+	if !GData.visible && keyboard:
 		GData.toggleOptions()
 

@@ -58,7 +58,7 @@ align = 2
 margin_top = 64.0
 margin_right = 984.0
 margin_bottom = 368.0
-size_flags_horizontal = 3
+size_flags_horizontal = 7
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="VB/MC"]
@@ -90,7 +90,9 @@ custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3
 
-[node name="B1" type="Button" parent="VB/Keys"]
+[node name="B1" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_right = 321.0
 margin_bottom = 58.0
 size_flags_horizontal = 3
@@ -98,7 +100,9 @@ size_flags_vertical = 3
 text = "1"
 script = ExtResource( 3 )
 
-[node name="B2" type="Button" parent="VB/Keys"]
+[node name="B2" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 331.0
 margin_right = 652.0
 margin_bottom = 58.0
@@ -107,7 +111,9 @@ size_flags_vertical = 3
 text = "2"
 script = ExtResource( 3 )
 
-[node name="B3" type="Button" parent="VB/Keys"]
+[node name="B3" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 662.0
 margin_right = 983.0
 margin_bottom = 58.0
@@ -116,7 +122,9 @@ size_flags_vertical = 3
 text = "3"
 script = ExtResource( 3 )
 
-[node name="B4" type="Button" parent="VB/Keys"]
+[node name="B4" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_top = 68.0
 margin_right = 321.0
 margin_bottom = 126.0
@@ -125,7 +133,9 @@ size_flags_vertical = 3
 text = "4"
 script = ExtResource( 3 )
 
-[node name="B5" type="Button" parent="VB/Keys"]
+[node name="B5" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 331.0
 margin_top = 68.0
 margin_right = 652.0
@@ -135,7 +145,9 @@ size_flags_vertical = 3
 text = "5"
 script = ExtResource( 3 )
 
-[node name="B6" type="Button" parent="VB/Keys"]
+[node name="B6" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 662.0
 margin_top = 68.0
 margin_right = 983.0
@@ -145,7 +157,9 @@ size_flags_vertical = 3
 text = "6"
 script = ExtResource( 3 )
 
-[node name="B7" type="Button" parent="VB/Keys"]
+[node name="B7" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_top = 136.0
 margin_right = 321.0
 margin_bottom = 194.0
@@ -154,7 +168,9 @@ size_flags_vertical = 3
 text = "7"
 script = ExtResource( 3 )
 
-[node name="B8" type="Button" parent="VB/Keys"]
+[node name="B8" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 331.0
 margin_top = 136.0
 margin_right = 652.0
@@ -164,7 +180,9 @@ size_flags_vertical = 3
 text = "8"
 script = ExtResource( 3 )
 
-[node name="B9" type="Button" parent="VB/Keys"]
+[node name="B9" type="Button" parent="VB/Keys" groups=[
+"keyButtons",
+]]
 margin_left = 662.0
 margin_top = 136.0
 margin_right = 983.0
@@ -184,9 +202,12 @@ custom_constants/separation = 10
 [node name="Row1" type="HBoxContainer" parent="VB/Keyboard"]
 margin_right = 984.0
 margin_bottom = 44.0
+size_flags_vertical = 3
 custom_constants/separation = 10
 
-[node name="Q" type="Button" parent="VB/Keyboard/Row1"]
+[node name="Q" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_right = 89.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -194,7 +215,9 @@ size_flags_vertical = 3
 text = "Q"
 script = ExtResource( 3 )
 
-[node name="W" type="Button" parent="VB/Keyboard/Row1"]
+[node name="W" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 99.0
 margin_right = 188.0
 margin_bottom = 44.0
@@ -203,7 +226,9 @@ size_flags_vertical = 3
 text = "W"
 script = ExtResource( 3 )
 
-[node name="E" type="Button" parent="VB/Keyboard/Row1"]
+[node name="E" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 198.0
 margin_right = 288.0
 margin_bottom = 44.0
@@ -212,7 +237,9 @@ size_flags_vertical = 3
 text = "E"
 script = ExtResource( 3 )
 
-[node name="R" type="Button" parent="VB/Keyboard/Row1"]
+[node name="R" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 298.0
 margin_right = 387.0
 margin_bottom = 44.0
@@ -221,7 +248,9 @@ size_flags_vertical = 3
 text = "R"
 script = ExtResource( 3 )
 
-[node name="T" type="Button" parent="VB/Keyboard/Row1"]
+[node name="T" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 397.0
 margin_right = 487.0
 margin_bottom = 44.0
@@ -230,7 +259,9 @@ size_flags_vertical = 3
 text = "T"
 script = ExtResource( 3 )
 
-[node name="Y" type="Button" parent="VB/Keyboard/Row1"]
+[node name="Y" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 497.0
 margin_right = 586.0
 margin_bottom = 44.0
@@ -239,7 +270,9 @@ size_flags_vertical = 3
 text = "Y"
 script = ExtResource( 3 )
 
-[node name="U" type="Button" parent="VB/Keyboard/Row1"]
+[node name="U" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 596.0
 margin_right = 685.0
 margin_bottom = 44.0
@@ -248,7 +281,9 @@ size_flags_vertical = 3
 text = "U"
 script = ExtResource( 3 )
 
-[node name="I" type="Button" parent="VB/Keyboard/Row1"]
+[node name="I" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 695.0
 margin_right = 785.0
 margin_bottom = 44.0
@@ -257,7 +292,9 @@ size_flags_vertical = 3
 text = "I"
 script = ExtResource( 3 )
 
-[node name="O" type="Button" parent="VB/Keyboard/Row1"]
+[node name="O" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 795.0
 margin_right = 884.0
 margin_bottom = 44.0
@@ -266,7 +303,9 @@ size_flags_vertical = 3
 text = "O"
 script = ExtResource( 3 )
 
-[node name="P" type="Button" parent="VB/Keyboard/Row1"]
+[node name="P" type="Button" parent="VB/Keyboard/Row1" groups=[
+"keyButtons",
+]]
 margin_left = 894.0
 margin_right = 984.0
 margin_bottom = 44.0
@@ -280,9 +319,12 @@ margin_top = 54.0
 margin_right = 984.0
 margin_bottom = 98.0
 size_flags_horizontal = 5
+size_flags_vertical = 3
 custom_constants/separation = 10
 
-[node name="A" type="Button" parent="VB/Keyboard/Row2"]
+[node name="A" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_right = 100.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -290,7 +332,9 @@ size_flags_vertical = 3
 text = "A"
 script = ExtResource( 3 )
 
-[node name="S" type="Button" parent="VB/Keyboard/Row2"]
+[node name="S" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 110.0
 margin_right = 210.0
 margin_bottom = 44.0
@@ -299,7 +343,9 @@ size_flags_vertical = 3
 text = "S"
 script = ExtResource( 3 )
 
-[node name="D" type="Button" parent="VB/Keyboard/Row2"]
+[node name="D" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 220.0
 margin_right = 321.0
 margin_bottom = 44.0
@@ -308,7 +354,9 @@ size_flags_vertical = 3
 text = "D"
 script = ExtResource( 3 )
 
-[node name="F" type="Button" parent="VB/Keyboard/Row2"]
+[node name="F" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 331.0
 margin_right = 431.0
 margin_bottom = 44.0
@@ -317,7 +365,9 @@ size_flags_vertical = 3
 text = "F"
 script = ExtResource( 3 )
 
-[node name="G" type="Button" parent="VB/Keyboard/Row2"]
+[node name="G" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 441.0
 margin_right = 542.0
 margin_bottom = 44.0
@@ -326,7 +376,9 @@ size_flags_vertical = 3
 text = "G"
 script = ExtResource( 3 )
 
-[node name="H" type="Button" parent="VB/Keyboard/Row2"]
+[node name="H" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 552.0
 margin_right = 652.0
 margin_bottom = 44.0
@@ -335,7 +387,9 @@ size_flags_vertical = 3
 text = "H"
 script = ExtResource( 3 )
 
-[node name="J" type="Button" parent="VB/Keyboard/Row2"]
+[node name="J" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 662.0
 margin_right = 763.0
 margin_bottom = 44.0
@@ -344,7 +398,9 @@ size_flags_vertical = 3
 text = "J"
 script = ExtResource( 3 )
 
-[node name="K" type="Button" parent="VB/Keyboard/Row2"]
+[node name="K" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 773.0
 margin_right = 873.0
 margin_bottom = 44.0
@@ -353,7 +409,9 @@ size_flags_vertical = 3
 text = "K"
 script = ExtResource( 3 )
 
-[node name="L" type="Button" parent="VB/Keyboard/Row2"]
+[node name="L" type="Button" parent="VB/Keyboard/Row2" groups=[
+"keyButtons",
+]]
 margin_left = 883.0
 margin_right = 984.0
 margin_bottom = 44.0
@@ -366,9 +424,12 @@ script = ExtResource( 3 )
 margin_top = 108.0
 margin_right = 984.0
 margin_bottom = 152.0
+size_flags_vertical = 3
 custom_constants/separation = 10
 
-[node name="Z" type="Button" parent="VB/Keyboard/Row3"]
+[node name="Z" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_right = 132.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
@@ -376,7 +437,9 @@ size_flags_vertical = 3
 text = "Z"
 script = ExtResource( 3 )
 
-[node name="X" type="Button" parent="VB/Keyboard/Row3"]
+[node name="X" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 142.0
 margin_right = 274.0
 margin_bottom = 44.0
@@ -385,7 +448,9 @@ size_flags_vertical = 3
 text = "X"
 script = ExtResource( 3 )
 
-[node name="C" type="Button" parent="VB/Keyboard/Row3"]
+[node name="C" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 284.0
 margin_right = 416.0
 margin_bottom = 44.0
@@ -394,7 +459,9 @@ size_flags_vertical = 3
 text = "C"
 script = ExtResource( 3 )
 
-[node name="V" type="Button" parent="VB/Keyboard/Row3"]
+[node name="V" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 426.0
 margin_right = 558.0
 margin_bottom = 44.0
@@ -403,7 +470,9 @@ size_flags_vertical = 3
 text = "V"
 script = ExtResource( 3 )
 
-[node name="B" type="Button" parent="VB/Keyboard/Row3"]
+[node name="B" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 568.0
 margin_right = 700.0
 margin_bottom = 44.0
@@ -412,7 +481,9 @@ size_flags_vertical = 3
 text = "B"
 script = ExtResource( 3 )
 
-[node name="N" type="Button" parent="VB/Keyboard/Row3"]
+[node name="N" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 710.0
 margin_right = 842.0
 margin_bottom = 44.0
@@ -421,7 +492,9 @@ size_flags_vertical = 3
 text = "N"
 script = ExtResource( 3 )
 
-[node name="M" type="Button" parent="VB/Keyboard/Row3"]
+[node name="M" type="Button" parent="VB/Keyboard/Row3" groups=[
+"keyButtons",
+]]
 margin_left = 852.0
 margin_right = 984.0
 margin_bottom = 44.0

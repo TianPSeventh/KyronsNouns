@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grass.wav-d7e52c24609b9c30038c45c0a27e2cfe.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Grass.wav"
+dest_files=[ "res://.import/Grass.wav-d7e52c24609b9c30038c45c0a27e2cfe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

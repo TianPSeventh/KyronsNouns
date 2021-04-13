@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pot.wav-c070718e29bf6ad879af9f1cc37f07b2.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Pot.wav"
+dest_files=[ "res://.import/Pot.wav-c070718e29bf6ad879af9f1cc37f07b2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

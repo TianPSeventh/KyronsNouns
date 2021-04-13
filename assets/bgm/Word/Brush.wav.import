@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Brush.wav-5426fdf23310f157e59d9e94d68db2c1.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Brush.wav"
+dest_files=[ "res://.import/Brush.wav-5426fdf23310f157e59d9e94d68db2c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

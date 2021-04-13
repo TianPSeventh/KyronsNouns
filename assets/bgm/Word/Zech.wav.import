@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Zech.wav-a232f1a7a65d7ddf1fd9d77d9d8564da.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Zech.wav"
+dest_files=[ "res://.import/Zech.wav-a232f1a7a65d7ddf1fd9d77d9d8564da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

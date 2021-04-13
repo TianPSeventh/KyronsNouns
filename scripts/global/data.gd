@@ -11,7 +11,12 @@ var LandscapeMode:bool = true
 var OrientationSensor = true
 var ListOfNodesAffectedByOrientation: Array = []
 var hints:bool = true
+var mode:String = "Uppercase"
+var activeScene:Node
+var running:bool = false
 
+func setMode(input:Array) -> void:
+	mode = input[0]
 
 func reloadOrientation() -> void:
 	OrientationLandscape(true if OS.window_size.x > OS.window_size.y else false)
@@ -42,11 +47,12 @@ func toggleOptions():
 	openOptions(!visible)
 
 func _on_options_visibility_changed():
+	$MC/MC2/VB/Main.visible = running
 	get_tree().paused = visible
 
 func changeAndPlayBGME(inputted:String, path:String = "Letters"):
 	get_node(BGME).stop()
-	get_node(BGME).stream = load("res://assets/bgm/%s/%s.wav" % [path,inputted])
+	get_node(BGME).stream = load("res://assets/bgm/%s/%s.wav" % [path,inputted.capitalize()])
 	get_node(BGME).play()
 
 func _notification(what):
@@ -59,6 +65,7 @@ func _on_Quit_pressed():
 func _on_Main_pressed():
 	ListOfNodesAffectedByOrientation.clear()
 	GM.changeScene(self,"res://scene/main.tscn")
+	running = false
 
 func setOrientationMode(raw):
 	var newOrient
@@ -67,10 +74,13 @@ func setOrientationMode(raw):
 	match raw.front():
 		"Landscape":
 			newOrient = true
+			OS.set_screen_orientation(4)
 		"Portrait":
 			newOrient = false
+			OS.set_screen_orientation(5)
 		"Sensored":
 			OrientationSensor = true
+			OS.set_screen_orientation(6)
 			newOrient = true if OS.window_size.x >  OS.window_size.y else false
 	OrientationLandscape(newOrient)
 

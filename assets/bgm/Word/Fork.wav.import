@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fork.wav-aaaa13d9115e1c33133f6aa4243e7681.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Fork.wav"
+dest_files=[ "res://.import/Fork.wav-aaaa13d9115e1c33133f6aa4243e7681.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

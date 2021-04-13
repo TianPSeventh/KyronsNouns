@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Logan.wav-7d933a77deec9fea7952092352ed3f09.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Logan.wav"
+dest_files=[ "res://.import/Logan.wav-7d933a77deec9fea7952092352ed3f09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -227,6 +227,7 @@ static func convertToTime(sec:int) -> String:
 	return "%02.0f:%02.0f:%02.0f" % [float(sec) / 360.0, float(sec) / 60.0, sec % 60]
 
 func quitGame():
+	get_tree().paused = true
 	get_tree().queue_delete(get_tree())
 	get_tree().quit()
 
@@ -237,7 +238,7 @@ func quitGame():
 func alert(input:Array) -> void:
 	var temp = load("res://prefabs/menus/Alert.tscn").instance()
 	
-	$".".add_child(temp)
+	GData.activeScene.add_child(temp)
 	match input.size():
 		1:
 			temp.alertBase(0,input[0])
@@ -253,7 +254,7 @@ func alert(input:Array) -> void:
 func alertBool(input:Array) -> void:
 	var temp = load("res://prefabs/menus/Alert.tscn").instance()
 	
-	$".".add_child(temp)
+	GData.activeScene.add_child(temp)
 	match input.size():
 		1:
 			temp.alertBase(1,input[0])
@@ -269,7 +270,7 @@ func alertBool(input:Array) -> void:
 func alertBranch(input:Array) -> void:
 	var temp = load("res://prefabs/menus/Alert.tscn").instance()
 	
-	$".".add_child(temp)
+	GData.activeScene.add_child(temp)
 	match input.size():
 		1:
 			temp.alertBase(2,input[0])

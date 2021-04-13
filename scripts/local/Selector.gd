@@ -14,12 +14,18 @@ func setSelection(next:bool):
 	if list.empty():
 		$Current.text = placeHolder
 	else:
-		selected = (selected + (1 if next else -1)) % list.size()
-		if selected < 0:
-			selected += list.size()
-		$Current.text = list[selected]
+		nextItem(next)
 		if reaction != null:
-			GM.funcRefArgu.newInit(reaction[0], reaction[1]).run_(list[selected])
+			if reaction.size() == 3:
+				GM.funcRefArgu.newInit(reaction[0], reaction[1], reaction[2]).run_(list[selected])
+			else:
+				GM.funcRefArgu.newInit(reaction[0], reaction[1]).run_(list[selected])
+
+func nextItem(next:bool):
+	selected = (selected + (1 if next else -1)) % list.size()
+	if selected < 0:
+		selected += list.size()
+	$Current.text = list[selected]
 
 func getCurrent():
 	return list[selected]

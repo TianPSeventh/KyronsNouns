@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cart.wav-6108e30a76b10e6696fa7f495a5c4c51.sample"
+
+[deps]
+
+source_file="res://assets/bgm/Word/Cart.wav"
+dest_files=[ "res://.import/Cart.wav-6108e30a76b10e6696fa7f495a5c4c51.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
