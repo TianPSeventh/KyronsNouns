@@ -29,6 +29,7 @@ func fontResize():
 	load("res://assets/font/dynamic/xLarge.tres").set("size", 53 * addSize)
 
 func _ready():
+	GM.checkAssets()
 	fontResize()
 	var temp = get_viewport()
 	$MC/MC2/VB/Orientation/Selector.initSelection(["Sensored","Landscape","Portrait"], [self,"setOrientationMode"])
@@ -106,3 +107,8 @@ func _on_BGME_finished():
 func _on_options_screen_orientation_changed(orientation):
 	if OrientationSensor:
 		OrientationLandscape(orientation)
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_ESCAPE:
+			toggleOptions()

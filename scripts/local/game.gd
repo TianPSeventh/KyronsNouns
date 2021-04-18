@@ -101,4 +101,3 @@ func _on_Timer_timeout():
 func _on_Pause_pressed():
 	if !GData.visible && keyboard:
 		GData.toggleOptions()
-

@@ -5,6 +5,17 @@ extends "res://scripts/global/constants.gd"
 #Statix Functions#
 ##################
 
+static func checkAssets(list:Array = nouns):
+	var file:File = File.new()
+	
+	for x in list:
+		if !file.file_exists("res://assets/2D/%s.png" % x):
+			print("%s.png not found" % x)
+		if !file.file_exists("res://assets/bgm/Word/%s.wav" % x):
+			print("%s.wav not found" % x)
+	file.close()
+
+
 static func randomNumber(limit:int = 0) -> int:
 	#Author: Christian Quiel Panuncillo
 	#Date: 23/08/2020

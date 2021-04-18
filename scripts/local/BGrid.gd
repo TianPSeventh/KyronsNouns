@@ -15,3 +15,9 @@ func uppercaseKB():
 
 func lowercaseKB():
 	text = text.to_lower()
+
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and char(event.scancode) == text.to_upper():
+			buttonPress()
